@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أخبار - Mix Hood</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="شعار Mix Hood">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="nav-btn">الرئيسية</a></li>
+          <li><a href="latest-videos.html" class="nav-btn">أحدث الفيديوهات</a></li>
+          <li><a href="top-10.html" class="nav-btn">أفضل 10</a></li>
+          <li><a href="jas.html" class="nav-btn">جيد ام سيء</a></li>
+          <li><a href="#" class="nav-btn">تواصل معنا</a></li>
+          <li><button id="mode-toggle" class="mode-toggle" aria-label="تبديل الوضع">🌙</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="news-page">
+    <div class="container">
+      <h1 class="section-title">📰 أخبار السينما والمسلسلات</h1>
+
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="images/news1.jpg" alt="خبر 1" style="height: auto; max-height: 100%; object-fit: cover;">
+          <div class="news-info">
+            <h2>فيلم ديزني الجديد قادم في 2025!</h2>
+            <p class="news-date">07 يوليوز 2025</p>
+            <p class="news-excerpt">أعلنت ديزني عن فيلم مغامرات جديد من إنتاج 2025...</p>
+            <a href="news1.html" class="read-more-btn">اقرأ المزيد</a>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <img src="images/news2.jpg" alt="خبر 1" style="height: auto; max-height: 100%; object-fit: cover;">
+          <div class="news-info">
+            <h2>Stranger Things تودعنا في الموسم الأخير</h2>
+            <p class="news-date">03 يوليوز 2025</p>
+            <p class="news-excerpt">شبكة Netflix أعلنت عن نهاية السلسلة الشهيرة Stranger Things...</p>
+            <a href="news2.html" class="read-more-btn">اقرأ المزيد</a>
+          </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/news1.jpg" alt="خبر 1" style="height: auto; max-height: 100%; object-fit: cover;">
+            <div class="news-info">
+              <h2>فيلم ديزني الجديد قادم في 2025!</h2>
+              <p class="news-date">07 يوليوز 2025</p>
+              <p class="news-excerpt">أعلنت ديزني عن فيلم مغامرات جديد من إنتاج 2025...</p>
+              <a href="news1.html" class="read-more-btn">اقرأ المزيد</a>
+            </div>
+          </div>
+  
+          <div class="news-card">
+            <img src="images/news2.jpg" alt="خبر 1" style="height: auto; max-height: 100%; object-fit: cover;">
+            <div class="news-info">
+              <h2>Stranger Things تودعنا في الموسم الأخير</h2>
+              <p class="news-date">03 يوليوز 2025</p>
+              <p class="news-excerpt">شبكة Netflix أعلنت عن نهاية السلسلة الشهيرة Stranger Things...</p>
+              <a href="news2.html" class="read-more-btn">اقرأ المزيد</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Mix Hood. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+  <script>
+    const toggleBtn = document.getElementById('mode-toggle');
+    const prefersDark = localStorage.getItem('theme') === 'dark';
+    if (prefersDark) document.body.classList.add('dark');
+
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
