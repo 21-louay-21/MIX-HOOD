@@ -19,7 +19,7 @@
           <li><a href="latest-videos.html" class="nav-btn">أحدث الفيديوهات</a></li>
           <li><a href="jas.html" class="nav-btn">جيد ام سيء</a></li>
           <li><a href="news.html" class="nav-btn active">الأخبار</a></li>
-          <li><a href="#" class="nav-btn">تواصل معنا</a></li>
+          <li><a href="ct.html" class="nav-btn">تواصل معنا</a></li>
           <li><button id="mode-toggle" class="mode-toggle" aria-label="تبديل الوضع">🌙</button></li>
         </ul>
       </nav>
@@ -59,13 +59,7 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.toggle-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const article = btn.parentElement;
-        article.classList.toggle('active');
-        btn.textContent = article.classList.contains('active') ? 'إخفاء' : 'عرض المزيد';
-      });
-    });
+    // 🔄 الوضع الليلي
     const toggleBtn = document.getElementById('mode-toggle');
     const prefersDark = localStorage.getItem('theme') === 'dark';
     if (prefersDark) document.body.classList.add('dark');
@@ -75,6 +69,21 @@
       const isDark = document.body.classList.contains('dark');
       toggleBtn.textContent = isDark ? '☀️' : '🌙';
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // ✅ سكريبت القائمة المتنقلة (hamburger menu)
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+
+    // يغلق القائمة منين تختار زر منها
+    document.querySelectorAll('nav a.nav-btn').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('show');
+      });
     });
   </script>
 </body>
